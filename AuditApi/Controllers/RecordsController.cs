@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuditApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class RecordsController : ControllerBase
     {
@@ -29,9 +29,9 @@ namespace AuditApi.Controllers
 
         // POST api/record
         [HttpPost]
-        public void Post([FromBody] Record record)
+        public ActionResult<long> Post([FromBody] Record record)
         {
-            _RecordsBusiness.addRecord(record);
+            return _RecordsBusiness.addRecord(record);
         }
     }
 }

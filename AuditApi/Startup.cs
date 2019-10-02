@@ -46,7 +46,7 @@ namespace AuditApi
                 app.UseHsts();
             }
             app.UsePathBase(new Microsoft.AspNetCore.Http.PathString("/auditsapi/v1"));
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
 
             app.UseSwagger();
